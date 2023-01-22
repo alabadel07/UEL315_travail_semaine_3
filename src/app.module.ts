@@ -10,12 +10,13 @@ import { Users } from './users/entities/user.entity';
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: process.env.DB_HOST,
+      type: 'mongodb',
+      host: process.env.MONGO_HOST,
       port: 3306,
-      username: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_DATABASE,
+      url:process.env.MONGO_URL,
+      username: process.env.MONGO_USERNAME,
+      password: process.env.MONGO_PASSWORD,
+      database: process.env.MONGO_DBNAME,
       entities: [Users],
       synchronize: true,
     }),
